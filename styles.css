@@ -25,16 +25,40 @@ h6 {
 
 h1 {
   font-size: 4rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 5px;
+}
+
+.window {
+  border: solid 3px black;
+
+  .window__top {
+    border-bottom: solid 3px black;
+    height: 2rem;
+    width: 100%;
+    content: "";
+  }
+
+  .window__top--purple {
+    background-color: var(--c-purple);
+  }
+
+  .window__content {
+  }
+
+  .window__content--big {
+    padding: 4rem 1rem;
+  }
+}
+
+.window--pink {
+  background-color: var(--c-pink);
 }
 
 header.homepage__header {
   width: 100%;
-  padding: 4rem 1rem;
   text-align: center;
-  background-color: var(--c-pink);
   max-width: 1024px;
-  border: solid 3px black;
   margin: 4rem auto;
 
   h1 {
