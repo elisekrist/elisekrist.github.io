@@ -1,7 +1,7 @@
 :root {
   --c-pink: rgb(252, 209, 226);
   --c-lilac: rgb(229, 163, 255);
-  --c-purple: rgb(180, 118, 250);
+  --c-purple: rgb(158 84 241);
   --c-blue: #0000ff;
 
   --f-title: "Press Start 2P", serif;
@@ -34,11 +34,12 @@ header.homepage__header {
   text-align: center;
   background-color: var(--c-pink);
   max-width: 1024px;
-  border: solid 2px var(--c-blue);
+  border: solid 3px black;
   margin: 4rem auto;
 
   h1 {
-    color: var(--c-blue);
+    color: var(--c-purple);
+    text-shadow: 5px 5px 0px #eee, 7px 7px 0px var(--c-blue);
   }
 
   .homepage__intro {
