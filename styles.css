@@ -1,0 +1,47 @@
+:root {
+  --c-pink: rgb(252, 209, 226);
+  --c-lilac: rgb(229, 163, 255);
+  --c-purple: rgb(180, 118, 250);
+  --c-blue: #0000ff;
+
+  --f-title: "Press Start 2P", serif;
+  --f-body: "Open Sans", serif;
+}
+
+body {
+  background: linear-gradient(var(--c-pink), var(--c-lilac));
+  min-height: 100vh;
+  font-family: var(--f-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--f-title);
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+header.homepage__header {
+  width: 100%;
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--c-pink);
+  max-width: 1024px;
+  border: solid 2px var(--c-blue);
+  margin: 4rem auto;
+
+  h1 {
+    color: var(--c-blue);
+  }
+
+  .homepage__intro {
+    font-size: 2rem;
+  }
+}
