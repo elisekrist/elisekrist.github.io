@@ -58,14 +58,24 @@ h1 {
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
-  @media screen(max-width: 800px) {
+  @media screen and (max-width: 1100px) {
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: 800px) {
     font-size: 2rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
   }
 }
 
 .window {
   border: solid 3px black;
   background-color: var(--window-bg);
+  position: relative;
+  z-index: 10;
 
   .window__top {
     border-bottom: solid 3px black;
@@ -93,8 +103,12 @@ h1 {
 header.homepage__header {
   width: 100%;
   text-align: center;
-  max-width: 1024px;
+  max-width: 1100px;
   margin: 4rem auto;
+
+  @media screen and (max-width: 1200px) {
+    max-width: calc(100vw - 6rem);
+  }
 
   h1 {
     color: var(--detail-color);
@@ -104,5 +118,116 @@ header.homepage__header {
 
   .homepage__intro {
     font-size: 2rem;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Clouds */
+
+.cloud {
+  position: absolute;
+  display: block;
+  width: 3em;
+  height: 3em;
+  margin: 2em auto;
+  color: var(--c-lilac);
+  background: #fff;
+  border-width: 0.25em;
+  border-style: solid;
+  border-radius: 50% 50% 0 0;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  z-index: 0;
+}
+
+.cloud--1 {
+  top: 200px;
+  left: -10px;
+}
+
+.cloud--2 {
+  top: 400px;
+  left: -100px;
+  animation-delay: 1s;
+}
+
+.cloud--3 {
+  top: 50px;
+  left: -100px;
+  animation-delay: 3s;
+}
+
+.cloud--4 {
+  bottom: 100px;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+.cloud--5 {
+  top: 200px;
+  left: -100px;
+  animation-delay: 5s;
+}
+
+.cloud--6 {
+  top: 400px;
+  left: -100px;
+  animation-delay: 6s;
+}
+
+.cloud--7 {
+  top: 0px;
+  left: -100px;
+  animation-delay: 7s;
+}
+
+.cloud--8 {
+  bottom: 50px;
+  left: -100px;
+  animation-delay: 8s;
+}
+
+.cloud:before,
+.cloud:after {
+  content: "";
+  position: absolute;
+  bottom: -0.25em;
+  background: inherit;
+  border-width: 0.25em;
+  border-style: solid;
+}
+
+.cloud:before {
+  left: 80%;
+  width: 60%;
+  height: 60%;
+  border-left: none;
+  border-radius: 50% 50% 50% 0;
+}
+
+.cloud:after {
+  right: 80%;
+  width: 80%;
+  height: 80%;
+  border-right: none;
+  border-radius: 50% 50% 0;
+}
+
+@keyframes move {
+  from {
+    0: -50%;
+  }
+  50% {
+    transform: scale(2) translateY(-50px);
+  }
+  to {
+    left: 100%;
   }
 }
