@@ -134,7 +134,7 @@ header.homepage__header {
 /* Clouds */
 
 .cloud {
-  position: absolute;
+  position: fixed;
   display: block;
   width: 3em;
   height: 3em;
