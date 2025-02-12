@@ -1,0 +1,21 @@
+name: Accessibility Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  accessibility-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sjekker ut repoet
+        uses: actions/checkout@v4
+
+      - name: Installer Pa11y CI
+        run: npm install -g pa11y-ci
+
+      - name: Kjør tilgjengelighetstester
+        run: pa11y-ci
