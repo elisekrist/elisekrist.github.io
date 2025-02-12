@@ -3,6 +3,7 @@
   --c-lilac: rgb(229, 163, 255);
   --c-purple: rgb(158 84 241);
   --c-blue: #0000ff;
+  --c-yellow: rgb(255, 245, 187);
 
   --f-title: "Press Start 2P", serif;
   --f-body: "Open Sans", serif;
@@ -24,6 +25,7 @@
     --c-lilac: rgb(50, 30, 80);
     --c-purple: rgb(100, 50, 150);
     --c-blue: #5f5fff;
+    --c-yellow: rgb(254, 235, 180);
 
     --bg-gradient-start: var(--c-lilac);
     --bg-gradient-end: var(--c-blue);
@@ -131,7 +133,7 @@ header.homepage__header {
   box-sizing: inherit;
 }
 
-/* Clouds */
+/* Sky elements */
 
 .cloud {
   position: fixed;
@@ -151,48 +153,56 @@ header.homepage__header {
   z-index: 0;
 }
 
-.cloud--1 {
+.cloud--1,
+.star--1 {
   top: 200px;
   left: -10px;
 }
 
-.cloud--2 {
+.cloud--2,
+.star--2 {
   top: 400px;
   left: -100px;
   animation-delay: 1s;
 }
 
-.cloud--3 {
+.cloud--3,
+.star--3 {
   top: 50px;
   left: -100px;
   animation-delay: 3s;
 }
 
-.cloud--4 {
+.cloud--4,
+.star--4 {
   bottom: 100px;
   left: -100px;
   animation-delay: 2s;
 }
 
-.cloud--5 {
+.cloud--5,
+.star--5 {
   top: 200px;
   left: -100px;
   animation-delay: 5s;
 }
 
-.cloud--6 {
+.cloud--6,
+.star--6 {
   top: 400px;
   left: -100px;
   animation-delay: 6s;
 }
 
-.cloud--7 {
+.cloud--7,
+.star--7 {
   top: 0px;
   left: -100px;
   animation-delay: 7s;
 }
 
-.cloud--8 {
+.cloud--8,
+.star--8 {
   bottom: 50px;
   left: -100px;
   animation-delay: 8s;
@@ -224,12 +234,63 @@ header.homepage__header {
   border-radius: 50% 50% 0;
 }
 
+.star__container {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .clouds {
+    display: none;
+  }
+
+  .star__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .star {
+    position: relative;
+    border-bottom: 50px solid var(--c-yellow);
+    border-right: 75px solid transparent;
+    border-left: 75px solid transparent;
+    transform: rotate(-37deg);
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    z-index: 0;
+    position: fixed;
+    transform: scale(0.6);
+    left: -150px;
+  }
+
+  .star::before {
+    content: "";
+    position: absolute;
+    left: -75px;
+    border-bottom: 50px solid var(--c-yellow);
+    border-right: 75px solid transparent;
+    border-left: 75px solid transparent;
+    transform: rotate(-71.5deg);
+  }
+
+  .star::after {
+    content: "";
+    position: absolute;
+    left: -75px;
+    border-bottom: 50px solid var(--c-yellow);
+    border-right: 75px solid transparent;
+    border-left: 75px solid transparent;
+    transform: rotate(71.5deg);
+  }
+}
+
 @keyframes move {
   from {
     0: -50%;
   }
   50% {
-    transform: scale(2) translateY(-50px);
+    transform: scale(1.2) translateY(-50px);
   }
   to {
     left: 100%;
