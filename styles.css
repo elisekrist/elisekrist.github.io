@@ -45,6 +45,25 @@
   box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+  background: red;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--c-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--c-purple);
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
 body {
   background: linear-gradient(var(--bg-gradient-start), var(--bg-gradient-end));
   min-height: 100vh;
@@ -108,8 +127,8 @@ h2,
   }
 }
 
-h1,
-.h1 {
+h3,
+.h3 {
   font-size: 2.6rem;
   line-height: 1.6;
   letter-spacing: 5px;
@@ -243,7 +262,7 @@ header.homepage__header {
 
 .about .window__content {
   max-height: 57vh;
-  overflow: scroll;
+  overflow-y: scroll;
 
   @media screen and (max-width: 900px) {
     max-height: unset;
