@@ -147,6 +147,26 @@ h3,
   }
 }
 
+h4,
+.h4 {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  letter-spacing: 5px;
+  text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
+
+  @media screen and (max-width: 1100px) {
+    font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.1rem;
+  }
+}
+
 a {
   color: var(--c-yellow);
 }
@@ -208,6 +228,25 @@ img {
   .window__content--medium {
     padding: 3rem 2rem;
   }
+
+  .window__close-button {
+    float: right;
+    border: 2px solid black;
+    padding: 4px;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 2px;
+    margin-top: 2px;
+    font-weight: bold;
+    background-color: var(--c-pink);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .window__close-button:is(:hover, :focus, :active) {
+    background: linear-gradient(var(--c-lilac), var(--c-yellow));
+    transform: rotate(45deg);
+  }
 }
 
 .window--pink {
@@ -218,7 +257,11 @@ img {
   background-color: var(--window-white-bg);
 }
 
+.main-menu {
+}
+
 .frontpage-link {
+  font-size: 0.8rem;
   margin: 1rem;
   display: block;
   z-index: 10;
@@ -253,7 +296,9 @@ header.homepage__header {
 
 /* About me */
 .about .window {
-  margin-top: 4vh;
+  margin-top: 2rem;
+  max-height: 37rem;
+  overflow: auto;
 
   @media screen and (max-width: 900px) {
     top: 0;
@@ -261,9 +306,6 @@ header.homepage__header {
 }
 
 .about .window__content {
-  max-height: 57vh;
-  overflow-y: scroll;
-
   @media screen and (max-width: 900px) {
     max-height: unset;
   }
