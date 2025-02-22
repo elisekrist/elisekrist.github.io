@@ -209,6 +209,7 @@ a {
   transition: all 0.2s ease-in-out;
   width: 90%;
   height: 90%;
+  border: 2px solid black;
 }
 
 .action-button:is(:hover, :focus, :active)::before {
@@ -216,6 +217,10 @@ a {
   height: 100%;
   top: 0.5rem;
   left: 0.5rem;
+}
+
+.action-button--shadow-pink::before {
+  background-color: var(--c-pink);
 }
 
 img {
@@ -383,8 +388,6 @@ header.homepage__header {
 /* About me */
 .about .window {
   margin-top: 6rem;
-  max-height: 37rem;
-  overflow: auto;
 
   @media screen and (max-width: 900px) {
     top: 0;
@@ -392,6 +395,8 @@ header.homepage__header {
 }
 
 .about .window__content {
+  overflow: auto;
+  max-height: 28.3rem;
   @media screen and (max-width: 900px) {
     max-height: unset;
   }
@@ -400,6 +405,7 @@ header.homepage__header {
 .about__title {
   margin-top: 0;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .about img {
