@@ -29,11 +29,12 @@
     --c-blue: #5f5fff;
     --c-dark-blue: #191961;
     --c-yellow: rgb(254, 235, 180);
+    --c-lightpink: rgb(158 84 241);
 
     --bg-gradient-start: var(--c-lilac);
     --bg-gradient-end: var(--c-blue);
     --text-color: white;
-    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-color: var(--c-lightpink);
     --shadow-offset: var(--c-blue);
     --window-pink-bg: var(--c-pink);
     --window-white-bg: var(--c-lilac);
