@@ -18,6 +18,7 @@
   --window-white-bg: #ffffff;
   --window-blue-bg: var(--c-blue);
   --detail-color: var(--c-purple);
+  --link-color: var(--c-purple);
 }
 
 /* Dark mode */
@@ -40,6 +41,7 @@
     --window-white-bg: var(--c-lilac);
     --window-blue-bg: var(--c-dark-blue);
     --detail-color: white;
+    --link-color: var(--c-yellow);
   }
 }
 
@@ -136,17 +138,17 @@ h2,
 
 h3,
 .h3 {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   line-height: 1.6;
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
   @media screen and (max-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   @media screen and (max-width: 800px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   @media screen and (max-width: 500px) {
@@ -175,7 +177,7 @@ h4,
 }
 
 a {
-  color: var(--c-yellow);
+  color: var(--link-color);
 }
 
 .action-button {
@@ -351,6 +353,10 @@ img {
   ul {
     list-style-type: none;
     padding: 0;
+  }
+
+  a {
+    color: var(--c-yellow);
   }
 }
 
