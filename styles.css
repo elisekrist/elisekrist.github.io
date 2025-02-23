@@ -357,7 +357,7 @@ img {
 
 #main-menu {
   max-width: 30rem;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   left: 50%;
   top: 50%;
