@@ -23,4 +23,49 @@ document.addEventListener("DOMContentLoaded", function () {
       popup.classList.toggle("show");
     }
   });
+
+  // Darkmode
+
+  const themeToggle = document.getElementById("theme-toggle");
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+    }
+  }
+
+  // Sjekk om brukeren har en lagret preferanse
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    // Bruk systeminnstillingene hvis ingen preferanse er lagret
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      applyTheme("dark");
+    } else {
+      applyTheme("light");
+    }
+  }
+
+  // Lytt etter endringer i systeminnstillingene
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        applyTheme(e.matches ? "dark" : "light");
+      }
+    });
+
+  themeToggle.addEventListener("click", function () {
+    const currentTheme = document.body.classList.contains("dark-mode")
+      ? "light"
+      : "dark";
+    applyTheme(currentTheme);
+    localStorage.setItem("theme", currentTheme);
+  });
 });

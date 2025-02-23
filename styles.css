@@ -22,27 +22,25 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-pink: rgb(71 2 136);
-    --c-lilac: rgb(50, 30, 80);
-    --c-purple: rgb(40 16 64);
-    --c-blue: #5f5fff;
-    --c-dark-blue: #191961;
-    --c-yellow: rgb(254, 235, 180);
-    --c-lightpink: rgb(158 84 241);
+.dark-mode {
+  --c-pink: rgb(71 2 136);
+  --c-lilac: rgb(50, 30, 80);
+  --c-purple: rgb(40 16 64);
+  --c-blue: #5f5fff;
+  --c-dark-blue: #191961;
+  --c-yellow: rgb(254, 235, 180);
+  --c-lightpink: rgb(158 84 241);
 
-    --bg-gradient-start: var(--c-lilac);
-    --bg-gradient-end: var(--c-blue);
-    --text-color: white;
-    --shadow-color: var(--c-lightpink);
-    --shadow-offset: var(--c-blue);
-    --window-pink-bg: var(--c-pink);
-    --window-white-bg: var(--c-lilac);
-    --window-blue-bg: var(--c-dark-blue);
-    --detail-color: white;
-    --link-color: var(--c-yellow);
-  }
+  --bg-gradient-start: var(--c-lilac);
+  --bg-gradient-end: var(--c-blue);
+  --text-color: white;
+  --shadow-color: var(--c-lightpink);
+  --shadow-offset: var(--c-blue);
+  --window-pink-bg: var(--c-pink);
+  --window-white-bg: var(--c-lilac);
+  --window-blue-bg: var(--c-dark-blue);
+  --detail-color: white;
+  --link-color: var(--c-yellow);
 }
 
 *,
@@ -202,6 +200,7 @@ ul li {
   width: fit-content;
 
   .action-button__content {
+    display: block;
     font-weight: 600;
     border: solid 2px black;
     outline: 0;
@@ -510,7 +509,7 @@ div#easter-egg.show {
   border-width: 0.25em;
   border-style: solid;
   border-radius: 50% 50% 0 0;
-  animation-name: move;
+  animation-name: move-light;
   animation-iteration-count: infinite;
   animation-duration: 10s;
   animation-timing-function: linear;
@@ -602,7 +601,7 @@ div#easter-egg.show {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
+.dark-mode {
   body {
     color: white;
   }
@@ -640,7 +639,7 @@ div#easter-egg.show {
     border-right: 75px solid transparent;
     border-left: 75px solid transparent;
     transform: rotate(-37deg);
-    animation-name: move;
+    animation-name: move-dark;
     animation-iteration-count: infinite;
     animation-duration: 10s;
     animation-timing-function: linear;
@@ -669,31 +668,29 @@ div#easter-egg.show {
     border-left: 75px solid transparent;
     transform: rotate(71.5deg);
   }
+}
 
-  @keyframes move {
-    from {
-      0: -50%;
-    }
-    50% {
-      transform: scale(1) translateY(-50px) rotate(90deg);
-    }
-    to {
-      left: 100%;
-      transform: rotate(180deg);
-    }
+@keyframes move-dark {
+  from {
+    left: -50%;
+  }
+  50% {
+    transform: scale(1) translateY(-50px) rotate(90deg);
+  }
+  to {
+    left: 100%;
+    transform: rotate(180deg);
   }
 }
 
-@media (prefers-color-scheme: light) {
-  @keyframes move {
-    from {
-      0: -50%;
-    }
-    50% {
-      transform: scale(2) translateY(-50px);
-    }
-    to {
-      left: 100%;
-    }
+@keyframes move-light {
+  from {
+    left: -50%;
+  }
+  50% {
+    transform: scale(2) translateY(-50px);
+  }
+  to {
+    left: 100%;
   }
 }
