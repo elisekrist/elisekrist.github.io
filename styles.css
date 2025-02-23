@@ -77,6 +77,8 @@ body {
   color: var(--text-color);
   margin: 0;
   padding-bottom: 6rem;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
 }
 
 h1,
@@ -178,6 +180,20 @@ h4,
 
 a {
   color: var(--link-color);
+  transition: 0.2s;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--link-color);
+}
+
+a:is(:hover, :focus, :active) {
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--c-blue);
+}
+
+ul li {
+  margin-bottom: 0.3rem;
 }
 
 .action-button {
