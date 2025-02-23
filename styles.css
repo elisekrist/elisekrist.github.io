@@ -46,7 +46,7 @@
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -74,6 +74,7 @@ body {
   font-family: var(--f-body);
   color: var(--text-color);
   margin: 0;
+  padding-bottom: 6rem;
 }
 
 h1,
@@ -89,6 +90,8 @@ h5,
 h6,
 .h6 {
   font-family: var(--f-title);
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 
 h1,
@@ -98,7 +101,7 @@ h1,
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     font-size: 3rem;
   }
 
@@ -118,7 +121,7 @@ h2,
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     font-size: 2.2rem;
   }
 
@@ -138,7 +141,7 @@ h3,
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     font-size: 2rem;
   }
 
@@ -158,7 +161,7 @@ h4,
   letter-spacing: 5px;
   text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     font-size: 1.8rem;
   }
 
@@ -216,7 +219,7 @@ a {
   border: 2px solid black;
 }
 
-.action-button:is(:hover, :focus, :active)::before {
+.action-button:has(:hover, :focus, :active)::before {
   width: 100%;
   height: 100%;
   top: 0.5rem;
@@ -297,9 +300,9 @@ img {
   .window__close-button {
     float: right;
     border: 2px solid black;
-    padding: 4px;
-    width: 1rem;
-    height: 1rem;
+    padding: 3px;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 4px;
     margin-top: 4px;
     font-weight: bold;
@@ -312,6 +315,14 @@ img {
     background: linear-gradient(var(--c-lilac), var(--c-yellow));
     transform: rotate(45deg);
   }
+}
+
+.window--header {
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  max-width: 1100px;
+  width: calc(100% - 4rem);
 }
 
 .window--pink {
@@ -395,12 +406,19 @@ header.homepage__header {
 
   @media screen and (max-width: 900px) {
     top: 0;
+    margin-top: 2rem;
+  }
+}
+
+.about .window:first-child {
+  @media screen and (max-width: 900px) {
+    margin-top: 6rem;
   }
 }
 
 .about .window__content {
   overflow: auto;
-  max-height: 28.3rem;
+  max-height: 34.3rem;
   @media screen and (max-width: 900px) {
     max-height: unset;
   }
@@ -416,6 +434,16 @@ header.homepage__header {
   width: 100%;
   height: 56vh;
   object-fit: contain;
+}
+
+.articles {
+  .grid-item {
+    margin-top: 3rem;
+  }
+
+  h2 {
+    color: var(--detail-color);
+  }
 }
 
 /* Sky elements */
