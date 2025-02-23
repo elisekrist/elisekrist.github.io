@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (parentDiv.matches("#main-menu")) {
           var popup = document.getElementById("main-menu");
           popup.classList.toggle("show");
+        } else if (parentDiv.matches("#easter-egg")) {
+          var popup = document.getElementById("easter-egg");
+          popup.classList.toggle("show");
         } else {
           parentDiv.remove();
         }
@@ -13,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (event.target.matches("#menu-button")) {
       var popup = document.getElementById("main-menu");
+      popup.classList.toggle("show");
+    }
+    if (event.target.matches("#easter-egg-button")) {
+      var popup = document.getElementById("easter-egg");
       popup.classList.toggle("show");
     }
   });

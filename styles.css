@@ -196,12 +196,10 @@ ul li {
 }
 
 .action-button {
-  position: fixed;
-  top: 1rem;
-  right: 2rem;
-  z-index: 500;
   padding: 0;
   border: 0;
+  position: relative;
+  width: fit-content;
 
   .action-button__content {
     font-weight: 600;
@@ -218,6 +216,10 @@ ul li {
 
 .action-button--white .action-button__content {
   background-color: white;
+}
+
+.action-button--pink .action-button__content {
+  background-color: var(--c-pink);
 }
 
 .action-button::before {
@@ -245,6 +247,13 @@ ul li {
 
 .action-button--shadow-pink::before {
   background-color: var(--c-pink);
+}
+
+.menu-button {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 500;
 }
 
 img {
@@ -465,6 +474,27 @@ header.homepage__header {
   h2 {
     color: var(--detail-color);
   }
+}
+
+.easter-egg-button {
+  margin: 2rem auto 0;
+}
+
+div#easter-egg {
+  position: fixed;
+  width: calc(100% - 2rem);
+  right: 1rem;
+  top: 6rem;
+  display: none;
+
+  .window__content {
+    max-height: calc(100vh - 10rem);
+    overflow: auto;
+  }
+}
+
+div#easter-egg.show {
+  display: block;
 }
 
 /* Sky elements */

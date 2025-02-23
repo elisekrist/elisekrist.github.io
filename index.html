@@ -76,11 +76,11 @@
       </div>
     </div>
 
-    <button
-      class="action-button action-button--white action-button--shadow-pink"
+    <div
+      class="action-button action-button--white menu-button action-button--shadow-pink"
     >
-      <div class="action-button__content" id="menu-button">Meny</div>
-    </button>
+      <button class="action-button__content" id="menu-button">Meny</button>
+    </div>
 
     <div class="window window--blue" id="main-menu">
       <div class="window__top window__top--yellow">
@@ -111,7 +111,23 @@
       <div class="window__content window__content--big">
         <h1 class="homepage__title">Velkommen til Elises side 🦄</h1>
         <h2 class="h4">⚠️ Under konstruksjon ⚠️</h2>
+        <div
+          class="easter-egg-button action-button action-button--pink"
+          aria-label="Klikk for å åpne et vindu med et bilde"
+        >
+          <button class="action-button__content" id="easter-egg-button">
+            🐣
+          </button>
+        </div>
       </div>
     </header>
+    <div class="homepage__header window window--white" id="easter-egg">
+      <div class="window__top window__top--pink">
+        <button class="window__close-button">✖</button>
+      </div>
+      <div class="window__content">
+        <img src="images/428644628_694964766126009_504772917710984040_n.jpg" />
+      </div>
+    </div>
   </body>
 </html>
