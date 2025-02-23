@@ -22,15 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Dark mode-håndtering
+  // Dark mode
   const themeToggle = document.getElementById("theme-toggle");
+  const themeText = themeToggle.querySelector(".action-button__content");
 
   function applyTheme(theme) {
     document.body.classList.toggle("dark-mode", theme === "dark");
     document.body.classList.toggle("light-mode", theme === "light");
+
+    if (theme === "dark") {
+      themeText.textContent = "🌙 Mørkt modus";
+      themeToggle.setAttribute("aria-label", "Bytt til lyst tema");
+    } else {
+      themeText.textContent = "☀️ Lyst modus";
+      themeToggle.setAttribute("aria-label", "Bytt til mørkt tema");
+    }
   }
 
-  // Hent lagret tema eller bruk systeminnstillinger
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
     applyTheme(savedTheme);
@@ -42,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // Oppdater tema ved systemendringer
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) => {
@@ -51,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // Bytte tema manuelt
   themeToggle.addEventListener("click", function () {
     const newTheme = document.body.classList.contains("dark-mode")
       ? "light"

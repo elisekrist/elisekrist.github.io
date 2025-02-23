@@ -92,15 +92,16 @@ h6,
 .h6 {
   font-family: var(--f-title);
   margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
+  text-shadow: 0.08em 0.08em 0px var(--shadow-color),
+    0.11em 0.11em 0px var(--shadow-offset);
+  letter-spacing: 0.1em;
 }
 
 h1,
 .h1 {
   font-size: 4rem;
   line-height: 1.6;
-  letter-spacing: 5px;
-  text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
   @media screen and (max-width: 1200px) {
     font-size: 3rem;
@@ -119,8 +120,6 @@ h2,
 .h2 {
   font-size: 3rem;
   line-height: 1.6;
-  letter-spacing: 5px;
-  text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
   @media screen and (max-width: 1200px) {
     font-size: 2.2rem;
@@ -139,8 +138,6 @@ h3,
 .h3 {
   font-size: 2.2rem;
   line-height: 1.6;
-  letter-spacing: 5px;
-  text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
   @media screen and (max-width: 1200px) {
     font-size: 1.8rem;
@@ -159,8 +156,6 @@ h4,
 .h4 {
   font-size: 2.2rem;
   line-height: 1.6;
-  letter-spacing: 5px;
-  text-shadow: 5px 5px 0px var(--shadow-color), 7px 7px 0px var(--shadow-offset);
 
   @media screen and (max-width: 1200px) {
     font-size: 1.8rem;
@@ -200,12 +195,13 @@ ul li {
   width: fit-content;
 
   .action-button__content {
+    font-family: var(--f-title);
     display: block;
-    font-weight: 600;
+    font-weight: 400;
     border: solid 2px black;
     outline: 0;
     padding: 1rem 4rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 0.08rem;
     position: relative;
     cursor: pointer;
@@ -404,6 +400,11 @@ img {
   text-decoration-thickness: 2px;
 }
 
+#theme-toggle {
+  display: block;
+  margin: 3rem auto 0;
+}
+
 header.homepage__header {
   width: 100%;
   text-align: center;
@@ -420,8 +421,6 @@ header.homepage__header {
 
   h1 {
     color: var(--detail-color);
-    text-shadow: 5px 5px 0px var(--shadow-color),
-      7px 7px 0px var(--shadow-offset);
   }
 
   .homepage__intro {
