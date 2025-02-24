@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("light-mode", theme === "light");
 
     if (theme === "dark") {
-      themeText.textContent = "🌙 Mørkt modus";
+      themeText.textContent = "☀️ Lyst modus";
       themeToggle.setAttribute("aria-label", "Bytt til lyst tema");
     } else {
-      themeText.textContent = "☀️ Lyst modus";
+      themeText.textContent = "🌙 Mørkt modus";
       themeToggle.setAttribute("aria-label", "Bytt til mørkt tema");
     }
   }
