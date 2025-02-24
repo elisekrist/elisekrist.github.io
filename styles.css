@@ -496,14 +496,14 @@ header.homepage__header {
 
 div#easter-egg {
   position: fixed;
-  width: calc(100% - 2rem);
-  right: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   top: 6rem;
   display: none;
 
   .window__content {
     max-height: calc(100vh - 10rem);
-    overflow: auto;
+    aspect-ratio: 1/1;
   }
 }
 
