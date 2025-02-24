@@ -375,6 +375,19 @@ img {
   color: white;
 }
 
+.window--small {
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .window__content {
+    padding: 2rem;
+  }
+}
+
 #main-menu {
   max-width: 30rem;
   position: fixed;
@@ -533,6 +546,10 @@ header.homepage__header {
   h2 {
     color: var(--detail-color);
   }
+}
+
+.easter-egg-button-div {
+  z-index: 5;
 }
 
 .easter-egg-button {
