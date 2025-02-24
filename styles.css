@@ -43,6 +43,11 @@
   --link-color: var(--c-yellow);
 }
 
+@font-face {
+  font-family: "Silkscreen";
+  src: url("fonts/slkscr.ttf");
+}
+
 *,
 *:before,
 *:after {
@@ -395,7 +400,7 @@ img {
 }
 
 .menu-link {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 1rem;
   display: block;
   z-index: 10;

@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Om meg</title>
+    <title>Artikler og foredrag</title>
     <meta
       name="description"
-      content="Her er ting og tang om meg. Kommer mer info etterhvert."
+      content="Her er greier jeg har skrevet og steder jeg har pratet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:image" content="./images/me.jpg" />
 
     <base target="_blank" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
@@ -41,7 +42,7 @@
     />
     <script src="script.js"></script>
   </head>
-  <body class="about">
+  <body class="articles">
     <div class="clouds">
       <div class="cloud cloud--1"></div>
       <div class="cloud cloud--2"></div>
@@ -113,64 +114,55 @@
         </button>
       </div>
     </div>
-
+    <div class="window window--pink window--header">
+      <div class="window__top window__top--lilac">
+        <button class="window__close-button">✖</button>
+      </div>
+      <div class="window__content window__content--medium">
+        <h1 class="about__title">Ting og tang</h1>
+      </div>
+    </div>
     <main class="grid grid--two-columns">
       <div class="grid__item window window--pink">
         <div class="window__top window__top--lilac">
           <button class="window__close-button">✖</button>
         </div>
         <div class="window__content window__content--medium">
-          <h1 class="about__title">Om meg</h1>
-          <p>
-            Hallo! Jeg er Elise og jeg har jobbet som utvikler i sju år, med
-            mest fokus på frontend!
-          </p>
-          <h2>SOME</h2>
-          <nav aria-label="Sosiale medie-linker">
-            <ul class="some-links">
-              <li>
-                <a
-                  class="some-links__link"
-                  aria-label="Bluesky-link"
-                  href="https://bsky.app/profile/frkfrontend.no"
-                  ><img src="images/Bluesky_Logo.png" alt="Bluesky logo"
-                /></a>
-              </li>
-              <li>
-                <a
-                  class="some-links__link"
-                  aria-label="Linkedin-link"
-                  href="https://www.linkedin.com/in/elisekristiansen/"
-                >
-                  <img src="images/LinkedIn_icon.webp" alt="Linkedinlogo" />
-                </a>
-              </li>
-              <li>
-                <a
-                  aria-label="Send meg epost"
-                  class="some-links__link"
-                  href="mailto:elise.kri@hotmail.com"
-                  >@</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <h2>Buzzwords</h2>
-          <p>
-            Har til nå utviklet i vue, svelte, react og litt for mye jquery, og
-            har fått bruke CMS'ene Sanity, Wagtail, Umbraco, eZ Publish og eZ
-            Platform. Har god erfaring med rammeverk som tailwind, bootstrap og
-            foundation, og har jobbet mot designskisser i Figma og Invision. Jeg
-            er også glad i universell utforming.
-          </p>
+          <h2>Linker</h2>
+          <ul>
+            <li>
+              <a href="https://discord.gg/norsk-programmering"
+                >Norsk programmering discord</a
+              >
+            </li>
+            <li>
+              <a href="https://clueless.no">Clueless.no</a>
+            </li>
+            <li>
+              <a href="https://vegar.codes">Vegar.codes</a>
+            </li>
+            <li>
+              <a href="https://variant.no">Variant.no</a>
+            </li>
+            <li>
+              <a href="https://kode24.no">Kode24.no</a>
+            </li>
+            <li>
+              <a href="https://kortslutning.fun">Kortslutnig.fun</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="grid__item window window--white">
         <div class="window__top window__top--pink">
           <button class="window__close-button">✖</button>
         </div>
-        <div class="window__content">
-          <img src="bilde_av_meg.jpg" alt="Bilde av meg" />
+        <div class="window__content window__content--big">
+          <h2>Badges</h2>
+          <frk-frontend-badge></frk-frontend-badge>
+          <script src="frk-frontend-badge.js"></script>
+          <norsk-programmering-badge></norsk-programmering-badge>
+          <script src="norsk-programmering-badge.js"></script>
         </div>
       </div>
     </main>
