@@ -3,14 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const { target } = event;
 
     // Håndter lukking av vinduer
-    if (
-      target.matches(".window__close-button") ||
-      target.matches(".pizza-egg-button")
-    ) {
+    if (target.matches(".window__close-button")) {
       const parentDiv = target.closest(".window");
       if (parentDiv) {
         const id = parentDiv.id;
-        if (id === "main-menu" || id === "easter-egg") {
+        if (id === "main-menu" || id === "easter-egg" || id === "pizza-egg") {
           parentDiv.classList.toggle("show");
         } else {
           parentDiv.remove();
@@ -18,10 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Håndter åpning/lukking av spesifikke elementer
-    if (target.matches("#menu-button, #easter-egg-button")) {
-      const popupId = target.id === "menu-button" ? "main-menu" : "easter-egg";
-      document.getElementById(popupId).classList.toggle("show");
+    if (target.matches("#menu-button, #easter-egg-button, #pizza-egg-button")) {
+      const popupId =
+        target.id === "menu-button"
+          ? "main-menu"
+          : target.id === "easter-egg-button"
+          ? "easter-egg"
+          : "pizza-egg";
+      document.getElementById(popupId)?.classList.toggle("show");
     }
   });
 

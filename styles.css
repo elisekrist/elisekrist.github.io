@@ -584,6 +584,17 @@ header.homepage__header {
   z-index: 5;
 }
 
+.about .pizza-egg-button-div {
+  z-index: 5;
+  left: calc(50% + 12rem);
+
+  @media screen and (max-width: 900px) {
+    margin-top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .easter-egg-button {
   margin: 2rem auto 0;
 }
@@ -609,8 +620,22 @@ div#easter-egg {
   }
 }
 
-div#easter-egg.show {
+div#easter-egg.show,
+div#pizza-egg.show {
   display: block;
+}
+
+div#pizza-egg {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6rem;
+  display: none;
+  margin-top: 0;
+
+  .window__content {
+    max-height: calc(100vh - 10rem);
+  }
 }
 
 /* Sky elements */
