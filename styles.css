@@ -352,6 +352,23 @@ img {
     background: linear-gradient(var(--c-lilac), var(--c-yellow));
     transform: rotate(45deg);
   }
+
+  .window-decoration {
+    font-size: 5rem;
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 4rem;
+      top: 5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+      font-size: 3rem;
+      top: 5rem;
+    }
+  }
 }
 
 .window--header {
@@ -386,6 +403,17 @@ img {
   .window__content {
     padding: 2rem;
   }
+}
+
+.window--absolute {
+  /* Absolute posisjonert vindu som legges inni et annet vindu for å overstyre det */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border: 0;
 }
 
 #main-menu {
@@ -508,6 +536,10 @@ header.homepage__header {
   }
 }
 
+.about .window--absolute {
+  margin: 0;
+}
+
 .about .window:first-child {
   @media screen and (max-width: 900px) {
     margin-top: 6rem;
@@ -554,6 +586,14 @@ header.homepage__header {
 
 .easter-egg-button {
   margin: 2rem auto 0;
+}
+
+.pizza-egg-window {
+  padding: 2rem;
+
+  .action-button {
+    margin: auto;
+  }
 }
 
 div#easter-egg {

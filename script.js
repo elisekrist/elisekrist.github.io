@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const { target } = event;
 
     // Håndter lukking av vinduer
-    if (target.matches(".window__close-button")) {
+    if (
+      target.matches(".window__close-button") ||
+      target.matches(".pizza-egg-button")
+    ) {
       const parentDiv = target.closest(".window");
       if (parentDiv) {
         const id = parentDiv.id;
