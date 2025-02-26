@@ -107,6 +107,15 @@ h6,
   letter-spacing: 0.1em;
 }
 
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + p {
+  margin-top: 1.2em;
+}
+
 h1,
 .h1 {
   font-size: 4rem;
