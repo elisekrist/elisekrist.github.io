@@ -32,7 +32,7 @@
   --c-lightpink: rgb(158 84 241);
 
   --bg-gradient-start: var(--c-lilac);
-  --bg-gradient-end: var(--c-blue);
+  --bg-gradient-end: var(--c-dark-blue);
   --text-color: white;
   --shadow-color: var(--c-lightpink);
   --shadow-offset: var(--c-blue);
@@ -630,7 +630,8 @@ div#easter-egg {
 }
 
 div#easter-egg.show,
-div#pizza-egg.show {
+div#pizza-egg.show,
+div#possum.show {
   display: block;
 }
 
@@ -641,6 +642,47 @@ div#pizza-egg {
   top: 6rem;
   display: none;
   margin-top: 0;
+
+  .window__content {
+    max-height: calc(100vh - 10rem);
+  }
+}
+
+#possum-button {
+  background-color: transparent;
+  border: 0;
+  width: 4rem;
+  height: 4rem;
+}
+
+#possum-button::after {
+  content: "🐀";
+  z-index: 10;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#possum-button:is(:hover, :focus, :active) {
+  outline: 2px solid var(--detail-color);
+  transition: 0.2s;
+  background-color: var(--c-pink);
+  cursor: pointer;
+}
+
+#possum-button::after,
+#possum-button::before {
+  border: 0;
+}
+
+div#possum {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6rem;
+  display: none;
+  z-index: 100;
 
   .window__content {
     max-height: calc(100vh - 10rem);
@@ -818,6 +860,14 @@ div#pizza-egg {
     border-right: 75px solid transparent;
     border-left: 75px solid transparent;
     transform: rotate(71.5deg);
+  }
+
+  #possum-button.star {
+    border: 0;
+    background-color: var(--c-yellow);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
   }
 }
 
