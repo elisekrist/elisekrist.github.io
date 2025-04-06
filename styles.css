@@ -1,10 +1,10 @@
 :root {
-  --c-pink: rgb(255, 224, 230);
-  --c-lilac: rgb(229, 163, 255);
-  --c-purple: rgb(158 84 241);
-  --c-purple-darker: rgb(118 18 231);
-  --c-blue: #0000ff;
-  --c-yellow: rgb(255, 245, 187);
+  --c-pink: oklch(0.93 0.035 4.61);
+  --c-lilac: oklch(0.81 0.1433 316.08);
+  --c-purple: oklch(0.61 0.2255 301.67);
+  --c-purple-darker: oklch(0.5 0.2672 294.46);
+  --c-blue: oklch(0.45 0.313214 264.052);
+  --c-yellow: oklch(0.96 0.0747 99.43);
 
   --f-title: "Press Start 2P", serif;
   --f-body: "Open Sans", serif;
@@ -12,11 +12,11 @@
   /* Standard (light mode) */
   --bg-gradient-start: var(--c-pink);
   --bg-gradient-end: var(--c-lilac);
-  --text-color: black;
-  --shadow-color: #eee;
+  --text-color: oklch(0 0 0);
+  --shadow-color: oklch(0.95 0 0);
   --shadow-offset: var(--c-blue);
   --window-pink-bg: var(--c-pink);
-  --window-white-bg: #ffffff;
+  --window-white-bg: oklch(1 0 0);
   --window-blue-bg: var(--c-blue);
   --detail-color: var(--c-purple);
   --link-color: var(--c-purple-darker);
@@ -24,23 +24,23 @@
 
 /* Dark mode */
 .dark-mode {
-  --c-pink: rgb(71 2 136);
-  --c-lilac: rgb(50, 30, 80);
-  --c-purple: rgb(40 16 64);
-  --c-blue: #5f5fff;
-  --c-dark-blue: #191961;
-  --c-yellow: rgb(254, 235, 180);
-  --c-lightpink: rgb(158 84 241);
+  --c-pink: oklch(0.34 0.1831 297.19);
+  --c-lilac: oklch(0.29 0.0886 299.25);
+  --c-purple: oklch(0.24 0.0877 303.3);
+  --c-blue: oklch(0.58 0.2309 276.48);
+  --c-dark-blue: oklch(0.27 0.1231 274.47);
+  --c-yellow: oklch(0.94 0.0733 91.26);
+  --c-lightpink: rgb(158, 84, 241);
 
   --bg-gradient-start: var(--c-lilac);
   --bg-gradient-end: var(--c-dark-blue);
-  --text-color: white;
+  --text-color: oklch(1 0 0);
   --shadow-color: var(--c-lightpink);
   --shadow-offset: var(--c-blue);
   --window-pink-bg: var(--c-pink);
   --window-white-bg: var(--c-lilac);
   --window-blue-bg: var(--c-dark-blue);
-  --detail-color: white;
+  --detail-color: oklch(1 0 0);
   --link-color: var(--c-yellow);
 }
 
@@ -649,14 +649,16 @@ div#pizza-egg {
   }
 }
 
-#possum-button {
+#possum-button,
+#possum-button-star {
   background-color: transparent;
   border: 0;
   width: 4rem;
   height: 4rem;
 }
 
-#possum-button::after {
+#possum-button::after,
+#possum-button-star:after {
   content: "🐀";
   z-index: 10;
   font-size: 3rem;
@@ -665,7 +667,8 @@ div#pizza-egg {
   left: 0;
 }
 
-#possum-button:is(:hover, :focus, :active) {
+#possum-button:is(:hover, :focus, :active),
+#possum-button-star:is(:hover, :focus, :active) {
   outline: 2px solid var(--detail-color);
   transition: 0.2s;
   background-color: var(--c-pink);
@@ -673,7 +676,9 @@ div#pizza-egg {
 }
 
 #possum-button::after,
-#possum-button::before {
+#possum-button::before,
+#possum-button-star::after,
+#possum-button-star::before {
   border: 0;
 }
 
@@ -863,7 +868,7 @@ div#possum {
     transform: rotate(71.5deg);
   }
 
-  #possum-button.star {
+  #possum-button-star.star {
     border: 0;
     background-color: var(--c-yellow);
     width: 4rem;

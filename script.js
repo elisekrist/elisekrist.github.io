@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (
       target.matches(
-        "#menu-button, #easter-egg-button, #pizza-egg-button, #possum-button"
+        "#menu-button, #easter-egg-button, #pizza-egg-button, #possum-button, #possum-button-star"
       )
     ) {
       const popupId =
