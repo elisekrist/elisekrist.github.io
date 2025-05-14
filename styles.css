@@ -212,6 +212,7 @@ ul li {
   border: 0;
   position: relative;
   width: fit-content;
+  display: block;
 
   .action-button__content {
     font-family: var(--f-title);
@@ -225,6 +226,8 @@ ul li {
     position: relative;
     cursor: pointer;
     z-index: 500;
+    color: var(--text-color);
+    text-decoration: none;
   }
 }
 
@@ -457,12 +460,11 @@ img {
   z-index: 10;
   position: relative;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 0px var(--c-lilac);
+  text-shadow: 2px 2px 0px var(--c-purple);
   text-decoration: none;
 
   @media screen and (max-width: 500px) {
     font-size: 0.9rem;
-    text-shadow: 1px 1px 0px var(--c-lilac);
   }
 }
 
@@ -474,6 +476,13 @@ img {
   @media screen and (max-width: 500px) {
     text-underline-offset: 3px;
   }
+}
+
+.language-link {
+  margin-top: 2rem;
+  display: block;
+  text-align: center;
+  text-shadow: 2px 2px 0px var(--c-purple);
 }
 
 #theme-toggle {
