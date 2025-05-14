@@ -18,7 +18,7 @@ jobs:
       - name: Installer Pa11y CI
         run: npm install -g pa11y-ci
 
-      - name: Kjør tilgjengelighetstester
+      - name: Run accessibility tests
         run: pa11y-ci
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
