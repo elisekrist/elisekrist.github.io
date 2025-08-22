@@ -36,4 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(popupId)?.classList.toggle("show");
     }
   });
+
+  const clouds = document.querySelectorAll(".cloud__container");
+  const stars = document.querySelectorAll(".star__container");
+
+  const handleClick = (event) => {
+    const element = event.currentTarget;
+    element.classList.add("pop");
+
+    // Fjern elementet etter at animasjonen er ferdig
+    element.addEventListener("animationend", () => {
+      element.remove();
+    });
+  };
+
+  clouds.forEach((cloud) => cloud.addEventListener("click", handleClick));
+  stars.forEach((star) => star.addEventListener("click", handleClick));
 });
