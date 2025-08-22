@@ -52,4 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   clouds.forEach((cloud) => cloud.addEventListener("click", handleClick));
   stars.forEach((star) => star.addEventListener("click", handleClick));
+
+  // Kjedelig modus
+  const simpleModeButton = document.getElementById("simple-mode-button");
+
+  simpleModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("simple-mode");
+  });
 });
