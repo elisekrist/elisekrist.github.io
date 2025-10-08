@@ -56,7 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Kjedelig modus
   const simpleModeButton = document.getElementById("simple-mode-button");
 
+  // Sjekk om simple mode er lagret fra før
+  if (localStorage.getItem("simpleMode") === "on") {
+    document.body.classList.add("simple-mode");
+  }
+
   simpleModeButton.addEventListener("click", () => {
     document.body.classList.toggle("simple-mode");
+    if (document.body.classList.contains("simple-mode")) {
+      localStorage.setItem("simpleMode", "on");
+    } else {
+      localStorage.removeItem("simpleMode");
+    }
   });
 });
