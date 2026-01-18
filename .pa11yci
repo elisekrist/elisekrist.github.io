@@ -1,11 +1,16 @@
 {
   "defaults": {
-    "timeout": 30000
+    "timeout": 30000,
+    "standard": "WCAG2AAA"
   },
   "urls": [
     "https://frkfrontend.no/",
     "https://frkfrontend.no/about",
     "https://frkfrontend.no/ting",
-    "https://frkfrontend.no/articles"
+    "https://frkfrontend.no/articles",
+    "https://frkfrontend.no/en",
+    "https://frkfrontend.no/en/about",
+    "https://frkfrontend.no/en/ting",
+    "https://frkfrontend.no/en/articles"
   ]
 }
