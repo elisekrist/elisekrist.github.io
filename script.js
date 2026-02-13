@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const isEnglish = document.documentElement.lang === "en";
+  const scoreHud = document.createElement("div");
+  scoreHud.id = "pop-score";
+  scoreHud.className = "window window--white";
+  scoreHud.hidden = true;
+  scoreHud.setAttribute("aria-hidden", "true");
+  scoreHud.setAttribute("role", "status");
+  scoreHud.setAttribute("aria-live", "polite");
+  scoreHud.setAttribute("aria-atomic", "true");
+  scoreHud.innerHTML = `
+    <div class="window__top window__top--pink"></div>
+    <div class="window__content window__content--small">
+      <span class="pop-score__label">${isEnglish ? "Pop" : "Poppet"}:</span>
+      <span id="pop-score-value">0</span>
+    </div>
+  `;
+  document.body.appendChild(scoreHud);
+  const scoreValue = scoreHud.querySelector("#pop-score-value");
+  let popScore = 0;
+
+  const incrementScore = () => {
+    if (popScore === 0) {
+      scoreHud.hidden = false;
+      scoreHud.setAttribute("aria-hidden", "false");
+    }
+    popScore += 1;
+    scoreValue.textContent = String(popScore);
+  };
+
+  const spawnSkyElement = (layer, containerClass, childElement) => {
+    const newContainer = document.createElement("div");
+    newContainer.className = containerClass;
+    const newChild = childElement.cloneNode(false);
+    newChild.textContent = childElement.textContent;
+    newContainer.appendChild(newChild);
+    layer.appendChild(newContainer);
+    newContainer.addEventListener("click", handleClick);
+  };
+
   document.addEventListener("click", function (event) {
     const { target } = event;
 
@@ -42,11 +81,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const handleClick = (event) => {
     const element = event.currentTarget;
+    if (element.classList.contains("pop")) {
+      return;
+    }
     element.classList.add("pop");
+    incrementScore();
 
     // Fjern elementet etter at animasjonen er ferdig
     element.addEventListener("animationend", () => {
+      const child = element.querySelector(".cloud, .star");
+      const layer = element.closest(".clouds, .stars");
+      const containerClass = element.classList.contains("cloud__container")
+        ? "cloud__container"
+        : "star__container";
+      const animationDuration = child
+        ? parseFloat(getComputedStyle(child).animationDuration)
+        : 0;
+      const respawnDelayMs = animationDuration
+        ? animationDuration * 1000
+        : 2000;
       element.remove();
+      if (child && layer) {
+        window.setTimeout(() => {
+          spawnSkyElement(layer, containerClass, child);
+        }, respawnDelayMs);
+      }
     });
   };
 
