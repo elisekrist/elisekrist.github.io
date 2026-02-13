@@ -1,18 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Dark mode
   const themeToggle = document.getElementById("theme-toggle");
+  if (!themeToggle) {
+    return;
+  }
   const themeText = themeToggle.querySelector(".action-button__content");
+  const isEnglish = document.documentElement.lang === "en";
 
   function applyTheme(theme) {
     document.body.classList.toggle("dark-mode", theme === "dark");
     document.body.classList.toggle("light-mode", theme === "light");
 
     if (theme === "dark") {
-      themeText.textContent = "☀️ Light mode";
-      themeToggle.setAttribute("aria-label", "Switch to light mode");
+      themeText.textContent = isEnglish ? "☀️ Light mode" : "☀️ Lyst modus";
+      themeToggle.setAttribute(
+        "aria-label",
+        isEnglish ? "Switch to light mode" : "Bytt til lyst tema"
+      );
     } else {
-      themeText.textContent = "🌙 Dark mode";
-      themeToggle.setAttribute("aria-label", "Switch to dark mode");
+      themeText.textContent = isEnglish ? "🌙 Dark mode" : "🌙 Mørkt modus";
+      themeToggle.setAttribute(
+        "aria-label",
+        isEnglish ? "Switch to dark mode" : "Bytt til mørkt tema"
+      );
     }
   }
 
