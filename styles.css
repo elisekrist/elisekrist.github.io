@@ -45,12 +45,12 @@
 }
 
 .easter-theme {
-  --c-pink: oklch(0.95 0.041 48);
+  --c-pink: oklch(98.017% 0.00995 57.877);
   --c-lilac: oklch(0.9 0.082 112);
-  --c-purple: oklch(0.71 0.14 24);
+  --c-purple: oklch(66.768% 0.17835 26.218);
   --c-purple-darker: oklch(0.55 0.17 18);
-  --c-blue: oklch(0.72 0.124 195);
-  --c-yellow: oklch(0.97 0.131 103);
+  --c-blue: oklch(54.313% 0.09273 194.807);
+  --c-yellow: oklch(97.552% 0.08482 105.014);
   --sky-emoji: "🐥";
   --sky-emoji-size: clamp(2.4rem, 4vw, 3.6rem);
   --sky-emoji-glow: rgba(255, 214, 10, 0.28);
