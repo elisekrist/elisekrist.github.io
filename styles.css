@@ -44,6 +44,47 @@
   --link-color: var(--c-yellow);
 }
 
+.easter-theme {
+  --c-pink: oklch(0.95 0.041 48);
+  --c-lilac: oklch(0.9 0.082 112);
+  --c-purple: oklch(0.71 0.14 24);
+  --c-purple-darker: oklch(0.55 0.17 18);
+  --c-blue: oklch(0.72 0.124 195);
+  --c-yellow: oklch(0.97 0.131 103);
+  --sky-emoji: "🐥";
+  --sky-emoji-size: clamp(2.4rem, 4vw, 3.6rem);
+  --sky-emoji-glow: rgba(255, 214, 10, 0.28);
+
+  --bg-gradient-start: var(--c-pink);
+  --bg-gradient-end: var(--c-lilac);
+  --shadow-offset: var(--c-blue);
+  --window-pink-bg: var(--c-pink);
+  --window-blue-bg: var(--c-blue);
+  --detail-color: var(--c-purple);
+  --link-color: var(--c-purple-darker);
+}
+
+.easter-theme.dark-mode {
+  --c-pink: oklch(0.39 0.076 20);
+  --c-lilac: oklch(0.33 0.056 145);
+  --c-purple: oklch(0.28 0.048 20);
+  --c-blue: oklch(0.63 0.109 191);
+  --c-dark-blue: oklch(0.24 0.039 208);
+  --c-yellow: oklch(0.93 0.136 101);
+  --c-lightpink: oklch(0.78 0.09 34);
+  --sky-emoji-glow: rgba(255, 228, 112, 0.4);
+
+  --bg-gradient-start: var(--c-lilac);
+  --bg-gradient-end: var(--c-dark-blue);
+  --shadow-color: var(--c-lightpink);
+  --shadow-offset: var(--c-blue);
+  --window-pink-bg: var(--c-pink);
+  --window-white-bg: var(--c-lilac);
+  --window-blue-bg: var(--c-dark-blue);
+  --detail-color: oklch(1 0 0);
+  --link-color: var(--c-yellow);
+}
+
 @font-face {
   font-family: "Silkscreen";
   src: url("fonts/slkscr.ttf");
@@ -1009,4 +1050,53 @@ div#possum {
 }
 .simple-mode .star__container {
   display: none !important;
+}
+
+.easter-theme {
+    .cloud {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--sky-emoji-size);
+    height: var(--sky-emoji-size);
+    color: var(--c-purple-darker);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    filter: drop-shadow(0 0 0.7rem var(--sky-emoji-glow));
+  }
+
+  .cloud::before,
+  .star:not(#possum-button-star)::before {
+    content: var(--sky-emoji);
+    position: static;
+    font-size: var(--sky-emoji-size);
+    line-height: 1;
+    background: transparent;
+    border: 0;
+  }
+
+  .cloud::after,
+  .star:not(#possum-button-star)::after {
+    content: none;
+  }
+
+  .star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--sky-emoji-size);
+    height: var(--sky-emoji-size);
+    border: 0;
+    background: transparent;
+    filter: drop-shadow(0 0 0.9rem var(--sky-emoji-glow));
+  }
+
+  .star::before {
+    font-size: var(--sky-emoji-size);
+  }
+
+  .star::after {
+    content: none;
+  }
 }
