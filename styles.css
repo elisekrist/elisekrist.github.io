@@ -51,7 +51,6 @@
   --c-purple-darker: oklch(0.39 0.17 258);
   --c-blue: oklch(0.54 0.19 256);
   --c-yellow: oklch(0.985 0.006 95);
-  --sky-emoji: "🇳🇴";
   --sky-emoji-size: clamp(2.3rem, 3.8vw, 3.4rem);
   --sky-emoji-glow: rgba(194, 19, 54, 0.24);
 
@@ -733,6 +732,23 @@ header.homepage__header {
   margin: 2rem auto 0;
 }
 
+.flag-icon {
+  width: 1.4em;
+  height: 1.05em;
+  object-fit: contain;
+  vertical-align: -0.12em;
+}
+
+.homepage__title .flag-icon {
+  margin-left: 0.25em;
+}
+
+#easter-egg-button .flag-icon {
+  display: block;
+  width: 2.8rem;
+  height: 2.1rem;
+}
+
 .pizza-egg-window {
   padding: 2rem;
 
@@ -1100,31 +1116,28 @@ div#possum {
 
 .may-theme {
   .cloud {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: var(--sky-emoji-size);
     height: var(--sky-emoji-size);
     color: var(--c-purple-darker);
-    background: transparent;
-    border: 0;
-    border-radius: 0;
+    background-color: #fff;
+    background-image: url("images/no_flag.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: rgba(17, 37, 106, 0.9);
+    border-radius: 50% 50% 0 0;
     filter: drop-shadow(0 0 0.7rem var(--sky-emoji-glow));
   }
 
   .cloud::before,
-  .star:not(#possum-button-star)::before {
-    content: var(--sky-emoji);
-    position: static;
-    font-size: var(--sky-emoji-size);
-    line-height: 1;
-    background: transparent;
-    border: 0;
-  }
-
-  .cloud::after,
-  .star:not(#possum-button-star)::after {
-    content: none;
+  .cloud::after {
+    content: "";
+    position: absolute;
+    bottom: -0.25em;
+    background-image: url("images/no_flag.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .star {
@@ -1132,14 +1145,29 @@ div#possum {
     align-items: center;
     justify-content: center;
     width: var(--sky-emoji-size);
-    height: var(--sky-emoji-size);
+    height: calc(var(--sky-emoji-size) * 0.72);
+    position: fixed;
+    left: -100px;
     border: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+    transform: none;
     background: transparent;
     filter: drop-shadow(0 0 0.9rem var(--sky-emoji-glow));
   }
 
   .star::before {
-    font-size: var(--sky-emoji-size);
+    content: "";
+    position: static;
+    width: var(--sky-emoji-size);
+    height: calc(var(--sky-emoji-size) * 0.72);
+    background-image: url("images/no_flag.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    transform: none;
   }
 
   .star::after {
