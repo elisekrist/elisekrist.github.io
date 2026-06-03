@@ -690,9 +690,9 @@ header.homepage__header {
 
 .about img {
   width: 100%;
-  max-height: calc(100vh - 12rem);
-  object-fit: contain;
+  object-fit: cover;
   display: block;
+  height: calc(100vh - 12rem);
   @media screen and (max-width: 900px) {
     max-height: unset;
   }
